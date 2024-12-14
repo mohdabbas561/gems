@@ -1,38 +1,157 @@
+/* App.css */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #4a1c49, #841d55);
+  color: #fff;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px; /* Adjusted padding to prevent overflow */
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure the navbar doesn't stretch beyond the screen */
+  z-index: 10;
+  box-sizing: border-box; /* Include padding in the total width */
+  transition: all 0.3s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar:hover {
+  background: rgba(0, 0, 0, 0.9);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ff4b5c;
+  transition: all 0.3s ease;
+}
+
+.logo span {
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ff4b5c;
+  transform: translateY(-4px);
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.icon:hover {
+  color: #ff4b5c;
+  transform: scale(1.2);
+}
+
+/* Hero Section */
+.hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  background: url("https://cdn.prod.website-files.com/66bc6d9142186c9f6f398b6f/66bc6d9142186c9f6f398b84_4%20(1).png")
+    no-repeat center center/cover;
+  background-attachment: fixed; /* Parallax effect */
+  transition: background 0.5s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.hero h1 {
+  font-size: 60px;
+  font-weight: 700;
+  z-index: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 span {
+  color: #ff4b5c;
+  display: block; /* Force the span to break to the next line */
+  margin-top: 10px; /* Add some space above for better alignment */
+}
+
+.join-button {
+  margin-top: 20px;
+  background: #ff4b5c;
+  border: none;
+  padding: 15px 35px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  z-index: 1;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.join-button:hover {
+  background: #e03e50;
+  transform: scale(1.05);
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
